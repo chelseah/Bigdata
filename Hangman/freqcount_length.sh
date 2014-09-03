@@ -1,4 +1,4 @@
-
+#get frequency count for different word length
 DICT=/usr/share/dict/words
 for i in {1..20}; 
 do

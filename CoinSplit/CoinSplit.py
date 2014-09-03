@@ -5,6 +5,7 @@ import sys
 from optparse import OptionParser
 
 def read_command_line():
+    #provide three utils for the code as the exercise requires.
     parser = OptionParser(usage='%prog [options]',
                           description='calculate the number of ways'
                           'to split amounts or a range of amount into' 
@@ -20,7 +21,15 @@ def read_command_line():
     return options
 
 def splitwithlist(target,lists):
-       
+    # Split target amount using the given list of coins
+    # 1) iterate through the number of possible choices for 
+    #    the biggest coin (first element in the list),
+    #    assuming list is sorted.
+    # 2) split the rest of amount with the rest of the list 
+    #    by iteratively call itself.
+    # 3) when there is only one type of coin left, 
+    #    count as one type when divisible, otherwise 
+    #    count as 0 type.
     ntop = int(target/lists[0])
     if(len(lists)==1):
         if(ntop*lists[0]==target):
